@@ -9,15 +9,13 @@ mod cow_gravity_with_quadtree;
 mod out_of_screen_despawner;
 mod cow_nstants;
 mod cow_ui; 
-mod milk_mover;
 mod cow_quadtree;
 use crate::cow_spawner::CowSpawnerPlugin;
 use crate::cow_gravity::CowGravityPlugin;
+use crate::cow_gravity_with_quadtree::CowGravityWithQuadtreePlugin;
 use crate::out_of_screen_despawner::OutOfScreenDespawnerPlugin;
 use crate::cow_nstants::CowNstants;
 use crate::cow_ui::CowUiPlugin;
-use crate::milk_mover::MilkMoverPlugin;
-use crate::cow_gravity_with_quadtree::CowGravityWithQuadtreePlugin;
 
 fn main(){
 
@@ -60,7 +58,6 @@ fn main(){
         .add_plugin(CowUiPlugin)
         .add_plugin(CowSpawnerPlugin)
         .add_plugin(CowGravityWithQuadtreePlugin)
-        .add_plugin(MilkMoverPlugin)
         .add_plugin(OutOfScreenDespawnerPlugin)
         .insert_resource(ClearColor(Color::rgb(0.1, 0.1, 0.4)))
         .insert_resource(cownstants)
