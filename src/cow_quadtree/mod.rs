@@ -12,9 +12,10 @@ pub struct CowQuadTree {
 }
 
 impl CowQuadTree {
-    pub fn new() -> CowQuadTree {
+    pub fn new(size : f32) -> CowQuadTree {
+        let bounds = AABB::new(Vec2::new(0.0, 0.0), Vec2::new(size, size));
         CowQuadTree {
-            root : CowQuadTreeNode::new(AABB::new(Vec2::new(0.0, 0.0), Vec2::new(100.0, 100.0)), 0),
+            root : CowQuadTreeNode::new(bounds, 0),
         }
     }
 

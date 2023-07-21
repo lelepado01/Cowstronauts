@@ -28,7 +28,7 @@ fn main(){
         ..default()
     }; 
 
-    let octree = cow_quadtree::CowQuadTree::new();
+    let octree = cow_quadtree::CowQuadTree::new(window_size);
 
     let mut group = DefaultPlugins.set(WindowPlugin {
         window: window_desc,
@@ -58,7 +58,8 @@ fn main(){
         .add_plugin(CowUiPlugin)
         .add_plugin(CowSpawnerPlugin)
         .add_plugin(CowGravityWithQuadtreePlugin)
-        .add_plugin(OutOfScreenDespawnerPlugin)
+        .add_plugin(CowGravityPlugin)
+        // .add_plugin(OutOfScreenDespawnerPlugin)
         .insert_resource(ClearColor(Color::rgb(0.1, 0.1, 0.4)))
         .insert_resource(cownstants)
         .insert_resource(octree)
